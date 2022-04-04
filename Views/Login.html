@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body.dark{
+	background: #303952;
+	transition-delay: 0.7s;
+}
+nav.blue{
+	background-color: #273c75;
+	transition-delay: 0.5;
+}
+.login{
+	width: 300px;
+	height: 300px;
+	border: 1px solid grey;
+	border-radius: 10px;
+	text-align: center;
+	margin: 50px auto;
+}
+h2{
+	color: white;
+	font-family: sans-serif;
+
+}
+.login input{
+	width: 200px;
+	height: 40px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	padding-left: 20px;
+}
+.login button{
+	width: 200px;
+	height: 30px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border:none;
+	background-color: #45a049;
+	color: white;
+	margin-bottom: 15px;
+}
+
+.login button:hover{
+	font-size: 15px;
+}
+.login p{
+	color: red;
+	left: 20px;
+}
+.login i{
+	font-size: 20px;
+}
+#wrapper{
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 0px;
+	top: 80px;
+	position: sticky;
+	z-index: 1;
+}
+
+.switch-toggle{
+	width: 70px;
+	height: 35px;
+	appearance: none;
+	background:#45a049;
+	border-radius: 26px;
+	position: relative;
+	cursor: pointer;
+	box-shadow: inset 0px 0px 16pxs rgba(0, 0, 0, .3);
+
+}
+.switch-toggle::before{
+	content: "";
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	background: white;
+	border-radius: 50%;
+	top: 3px;
+	left: 3px;
+	box-shadow: 0px 0px 6pxs rgba(0, 0, 0, .3);
+	transition: 0.25s;
+}
+.switch-toggle:checked{
+	background: yellowgreen;
+
+}
+.switch-toggle:checked::before{
+	left: 40px;
+}
+
+/*animation text-banh theo yeu cau*/
+
+
+
+  
+ 
+    </style>
+    <header class="sticky-top">
+        <nav>
+            <div class=".container-fluid">
+                <div class="row">
+                    <div class="col-6 menu">
+                        <ul>
+                            <li><i class="fas fa-birthday-cake"></i></li>
+                            
+                            <li>
+                                <a href="/Views/Home.html"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-bars"></i> Danh mục</a>
+                                <ul class="menu-child">
+                                    <li><a href="/Views/BDCake.html">Bánh sinh nhật</a></li>
+                                    <li><a href="/Views/RequestCake.html">Bánh theo yêu cầu</a></li>
+                                    <li><a href="/Views/EvenCake.html">Bánh ngày lễ</a></li>
+                                    <li><a href="/Views/MiniCake.html">Mini Cake</a></li>
+                                    <li><a href="/Views/Login.html"><i class="fas fa-sign-in-alt"></i> Sign-in</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 ShoppingCart">
+                        <div class="topnav">
+                            <div class="search-container">
+                              <form action="/action_page.php">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
+                            </div>
+                          </div>
+                        <button id="cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            Giỏ Hàng
+                        </button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Giỏ Hàng</h5>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="cart-row">
+                                        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                        <span class="cart-price cart-header cart-column">Giá</span>
+                                        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                                    </div>
+                                    <div class="cart-items">
+                                        
+                                    <div class="cart-total">
+                                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                                        <span class="cart-total-price">0$</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                                    <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <input  type="checkbox" class="switch-toggle" id="light-dark">
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="login">
+		<h2>Member login</h2>
+		<input type="text" placeholder="username">
+		<input type="password" placeholder="password">
+		<button onclick="Login()">Log in</button>
+        <button style="background-color: cadetblue;" class="sigup" onclick="Login()">Sign up</button>
+        <br>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-facebook-messenger"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+        <p>forgot your password ?</p>
+	</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-6" id="box">
+                    <ul>
+                        <li><p href="">CÔNG TY CỔ PHẦN CÔNG NGHỆ SÂU Á CHÂU</p></li>
+                        <li><p href="">Địa chỉ: 104 Mai Thị Lựu, phường Đa Kao, Quận 1, TP Hồ Chí Minh </p></li>
+                        <li><p href="">E-mail: hotro@deeptech.vn</p></li>
+                        <li><p href="">Giấy phép kinh doanh số: 0316966537</p></li>
+                        <li><p href="">Cấp ngày: 06/10/2021 bởi Sở kế hoạch và Đầu tư Tp. Hồ Chí Minh</p></li>
+                    </ul>
+                    </div>
+                    <div class="col-3" id="box1">
+                        <ul>
+                            <li><p href="">VỀ CHÚNG TÔI</p></li>
+                            <li><p href="">Giới thiệu</p></li>
+                            <li><p href="">Liên hệ</p></li>
+                            <li><p href="">Sơ đồ webstie</p></li>
+                        </ul>
+                        </div>
+                        <div class="col-3" id="box2">
+                            <ul>
+                                <li><p href="">THÔNG TIN</p></li>
+                                <li><p href="">Chính sách bảo mật</p></li>
+                                <li><p href="">Điều khoản sử dụng</p></li>
+                                <li><p href="">Quy chế hoạt động</p></li>
+                                <li><a href="/Banchay/HuongDan.html">Hướng dẫn mua hàng</a></li>
+                            </ul>
+                                </div>
+                                    </div>
+    </footer>
+    <script>
+        function Login(){
+    alert("Đăng nhập thành công!")
+}
+    </script>
+     <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

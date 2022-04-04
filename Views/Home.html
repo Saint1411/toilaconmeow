@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Views/Style.css">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <!-- <style>
+        /* customizable snowflake styling */
+        .snowflake {
+          color: #f5f6fa;
+          font-size: 1em;
+          font-family: Arial, sans-serif;
+          text-shadow: 0 0 5px #000;
+        }
+        
+        @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+        </style>
+        <div class="snowflakes" aria-hidden="true">
+          <div class="snowflake">
+          ❅
+          </div>
+          <div class="snowflake">
+          ❆
+          </div>
+          <div class="snowflake">
+          ❅
+          </div>
+          <div class="snowflake">
+          ❆
+          </div>
+          <div class="snowflake">
+          ❅
+          </div>
+          <div class="snowflake">
+          ❆
+          </div>
+          <div class="snowflake">
+            ❅
+          </div>
+          <div class="snowflake">
+            ❆
+          </div>
+          <div class="snowflake">
+            ❅
+          </div>
+          <div class="snowflake">
+            ❄ 
+          </div>
+          <div class="snowflake">
+            ❀
+          </div>
+          <div class="snowflake">
+            ❀
+          </div>
+          <div class="snowflake">
+            ❀
+          </div>
+        </div> -->
+        <style>
+            #snowflakeContainer{position:absolute;left:0px;top:0px;}
+            .snowflake{padding-left:15px;font-size:14px;line-height:24px;position:fixed;color:#ebebeb;user-select:none;z-index:1000;-moz-user-select:none;-ms-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
+            .snowflake:hover {cursor:default}
+        </style>
+        <div id='snowflakeContainer'>
+        <p class='snowflake'>❄</p>
+        </div>
+        <script >
+            //<![CDATA[
+            var requestAnimationFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame;var transforms=["transform","msTransform","webkitTransform","mozTransform","oTransform"];var transformProperty=getSupportedPropertyName(transforms);var snowflakes=[];var browserWidth;var browserHeight;var numberOfSnowflakes=50;var resetPosition=false;function setup(){window.addEventListener("DOMContentLoaded",generateSnowflakes,false);window.addEventListener("resize",setResetFlag,false)}setup();function getSupportedPropertyName(b){for(var a=0;a<b.length;a++){if(typeof document.body.style[b[a]]!="undefined"){return b[a]}}return null}function Snowflake(b,a,d,e,c){this.element=b;this.radius=a;this.speed=d;this.xPos=e;this.yPos=c;this.counter=0;this.sign=Math.random()<0.5?1:-1;this.element.style.opacity=0.5+Math.random();this.element.style.fontSize=4+Math.random()*30+"px"}Snowflake.prototype.update=function(){this.counter+=this.speed/5000;this.xPos+=this.sign*this.speed*Math.cos(this.counter)/40;this.yPos+=Math.sin(this.counter)/40+this.speed/30;setTranslate3DTransform(this.element,Math.round(this.xPos),Math.round(this.yPos));if(this.yPos>browserHeight){this.yPos=-50}};function setTranslate3DTransform(a,c,b){var d="translate3d("+c+"px, "+b+"px, 0)";a.style[transformProperty]=d}function generateSnowflakes(){var b=document.querySelector(".snowflake");var h=b.parentNode;browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var d=0;d<numberOfSnowflakes;d++){var j=b.cloneNode(true);h.appendChild(j);var e=getPosition(50,browserWidth);var a=getPosition(50,browserHeight);var c=5+Math.random()*40;var g=4+Math.random()*10;var f=new Snowflake(j,g,c,e,a);snowflakes.push(f)}h.removeChild(b);moveSnowflakes()}function moveSnowflakes(){for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.update()}if(resetPosition){browserWidth=document.documentElement.clientWidth;browserHeight=document.documentElement.clientHeight;for(var b=0;b<snowflakes.length;b++){var a=snowflakes[b];a.xPos=getPosition(50,browserWidth);a.yPos=getPosition(50,browserHeight)}resetPosition=false}requestAnimationFrame(moveSnowflakes)}function getPosition(b,a){return Math.round(-1*b+Math.random()*(a+2*b))}function setResetFlag(a){resetPosition=true};
+            //]]>
+        </script>
+    <header class="sticky-top">
+        <nav>
+            <div class=".container-fluid">
+                <div class="row">
+                    <div class="col-6 menu">
+                        <ul>
+                            <li><i class="fas fa-birthday-cake"></i></li>
+                            
+                            <li>
+                                <a href="/Views/Home.html"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-bars"></i> Danh mục</a>
+                                <ul class="menu-child">
+                                    <li><a href="/Views/BDCake.html">Bánh sinh nhật</a></li>
+                                    <li><a href="/Views/RequestCake.html">Bánh theo yêu cầu</a></li>
+                                    <li><a href="/Views/EvenCake.html">Bánh ngày lễ</a></li>
+                                    <li><a href="/Views/MiniCake.html">Mini Cake</a></li>
+                                    <li><a href="Login.html"><i class="fas fa-sign-in-alt"></i> Sign-in</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 ShoppingCart">
+                        <div class="topnav">
+                            <div class="search-container">
+                              <form action="/action_page.php">
+                                <input type="text" placeholder="Tìm kiếm.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
+                            </div>
+                          </div>
+                        <button id="cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            Giỏ Hàng
+                        </button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Giỏ Hàng</h5>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="cart-row">
+                                        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                        <span class="cart-price cart-header cart-column">Giá</span>
+                                        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                                    </div>
+                                    <div class="cart-items">
+                                        
+                                    <div class="cart-total">
+                                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                                        <span class="cart-total-price">0$</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                                    <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <input  type="checkbox" class="switch-toggle" id="light-dark">
+    </div>
+    <div class="center-outer">
+        <div class="center-inner">
+        
+        <div class="bubbles">
+        <h1>Welcome to the Mist</h1>
+        </div>
+        
+        </div>
+        </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/silde1.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/silde2.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/slide3.jpg" style="width:100%">
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        <!-- ----------- -->
+        <div class="container">
+            <div row>
+                <div class="col-12">
+                    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <div class="content_chay">
+            <div class="content__container">
+              <p class="content__container__text">
+                Chúng tôi có
+              </p>
+              
+              <ul class="content__container__list">
+                <li class="content__container__list__item"> bánh sinh nhật</li>
+                <li class="content__container__list__item"> bánh ngày lễ</li>
+                <li class="content__container__list__item">bánh đặt yêu cầu</li>
+                <li class="content__container__list__item"> mini cake</li>
+              </ul>
+            </div>
+          </div>
+                </div>
+
+            </div>
+        </div>
+        <section class="about py-5" id="about">
+            <div class="container">
+        
+              <div class="row">
+                <div class="col-10 mx-auto col-md-6 my-5">
+                  <h1 class="text-capitalize">about <strong class="banner-title ">us</strong></h1>
+                  <p class="my-4 text-muted w-75">"You are lucky to be kept at home for 2 weeks, someone is kept permanently in 2020 and 2021."</p>
+                    <p class="my-4 text-muted w-75">This is another good beginning. May my sincere blessing surround splendid travel of your life? 
+                      <br>  (<a style="color: brown;font-size: 17px;cursor:pointer;" onclick="checkCookie()"><ins><i>Click here</i></ins></a> and you must believe that this is not the last day)
+                    </p>
+                  <a href="#Store_Home" class="btn btn-outline-secondary btn-black text-uppercase ">BUY NOW</a>
+        
+                </div>
+                <div class="col-10 mx-auto col-md-6 align-self-center my-5">
+                  <div class="about-img__container">
+                    <img src="/Pictures/Home/AboutUs.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="row" style="margin-top: 30px; margin-bottom: 20px;">
+            <div class="col-10 mx-auto col-sm-6 text-center">
+              <h1 class="text-capitalize">The <strong class="banner-title ">Mist</strong></h1>
+            </div>
+          </div>
+          <!-- end of section title -->
+          <!--filter buttons -->
+          <div class="row">
+            <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap">
+              <a href="#about" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="all">About us</a>
+              <a href="/Views/BDCake.html" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="cakes">Birthday</a>
+              <a href="/Views/EvenCake.html" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="cupcakes">Events</a>
+              <a href="/Views/RequestCake.html" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="sweets">request</a>
+              <a href="/Views/MiniCake.html" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2" data-filter="doughnuts">Mini Cake</a>
+            </div>
+          </div>
+          
+        <div id="wrapper01">
+            <div class="headline">
+                <h3 id="Store_Home">sản phẩm bán chạy</h3>
+            </div>
+            <ul class="products">
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 1.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a1.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 21$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail/HomeDetail/bánh 1.html" class="product-name">CHOCOLATE - MẪU 2108</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 2.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a2.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 22$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail/HomeDetail/bánh 2.html" class="product-name">CHANH DÂY - MẪU 2110</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 3.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a3.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 7$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail/HomeDetail/bánh 3.html" class="product-name">TIRAMISU - MẪU 2112</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 4.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a4.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 12$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail/HomeDetail/bánh 4.html" class="product-name">BÁNH KEM BẮP - MẪU 2124</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 5.html" class="product-thumb">
+                                <img class="img_banchay" class="img_banchay" src="/Pictures/Home/a5.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 31$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 5.html" class="product-name">MOUSSE DÂU - MẪU 2139</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 6.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a6.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 10$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail/HomeDetail/bánh 6.html" class="product-name">BÁNH KEM BẮP - MẪU 2118</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 7.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a7.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 3$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a  href="/Detail/HomeDetail/bánh 7.html" class="product-name">BÁNH KEM BẮP - MẪU 2125</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 8.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a8.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 9$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail/HomeDetail/bánh 8.html" class="product-name">BÁNH KEM BẮP - MẪU 2114</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="wrapper01">
+            <div class="headline">
+                <h3 id="Store_Home" style="color:hotpink;">MẪU MỚI RA MẮT</h3>
+            </div>
+            <ul class="products">
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 1.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/BongLan.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 21$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 1.html" class="product-name">BÔNG LAN TRỨNG - MẪU 2021</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 2.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake1.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 22$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 2.html" class="product-name">CHANH DÂY - MẪU 2110</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 3.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake2.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 7$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 3.html" class="product-name">SẦU RIÊNG - MẪU 2021</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 4.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake3.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 12$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 4.html" class="product-name">KEM VANI - MẪU 2019</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 5.html" class="product-thumb">
+                                <img class="img_banchay" class="img_banchay" src="/Pictures/Home/Fcake4.png" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 31$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail_home/bánh 5.html" class="product-name">ORIO FLOWER - MẪU 2139</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 6.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake5.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 10$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 6.html" class="product-name">COOKIE PURPLE - MẪU 2118</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 7.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake6.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 3$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a  href="/Detail/HomeDetail/bánh 7.html" class="product-name">OLYMPIA ROSÉ - MẪU 2022</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 8.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake7.png" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 9$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 8.html" class="product-name">DOUBLE HEART - MẪU 2114</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="wrapper01">
+            <div class="headline">
+                <h3 id="Store_Home" style="color:deepskyblue;">SẢN PHẨM TRUYỀN THỐNG</h3>
+            </div>
+            <ul class="products">
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 1.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake8.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 21$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 1.html" class="product-name">RED VEDLET - MẪU LEOHO</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 2.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake9.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 22$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 2.html" class="product-name">TIRAMISU - MẪU FANCY</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 3.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake10.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 7$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 3.html" class="product-name">ORANGE/C - MẪU ELEGANT</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 4.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake11.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 12$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 4.html" class="product-name">FIRST BIRTHDAY - MẪU 2019</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 5.html" class="product-thumb">
+                                <img class="img_banchay" class="img_banchay" src="/Pictures/Home/Fcake12.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 31$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail_home/bánh 5.html" class="product-name">THAT'S LOVE - MẪU EXO</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 6.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake13.png" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 10$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 6.html" class="product-name">BEST FRIEND - MẪU BFF</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 7.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/Fcake14.png" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 3$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a  href="/Detail/HomeDetail/bánh 7.html" class="product-name">BE A FAMILY - MẪU ETERNAL</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail/HomeDetail/bánh 8.html" class="product-thumb">
+                                <img class="img_banchay" src="/Pictures/Home/a4.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 9$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>FAVORITE</span>
+                            <a href="/Detail/HomeDetail/bánh 8.html" class="product-name">NGƯỜI LỚN CÔ ĐƠN - MẪU ALONE :)</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6" id="box">
+                        <ul>
+                            <li><p href="">CÔNG TY CỔ PHẦN CÔNG NGHỆ SÂU Á CHÂU</p></li>
+                            <li><p href="">Địa chỉ: 104 Mai Thị Lựu, phường Đa Kao, Quận 1, TP Hồ Chí Minh </p></li>
+                            <li><p href="">E-mail: hotro@deeptech.vn</p></li>
+                            <li><p href="">Giấy phép kinh doanh số: 0316966537</p></li>
+                            <li><p href="">Cấp ngày: 06/10/2021 bởi Sở kế hoạch và Đầu tư Tp. Hồ Chí Minh</p></li>
+                        </ul>
+                        </div>
+                        <div class="col-3" id="box1">
+                            <ul>
+                                <li><p href="">VỀ CHÚNG TÔI</p></li>
+                                <li><p href="">Giới thiệu</p></li>
+                                <li><p href="">Liên hệ</p></li>
+                                <li><p href="">Sơ đồ webstie</p></li>
+                            </ul>
+                            </div>
+                            <div class="col-3" id="box2">
+                                <ul>
+                                    <li><p href="">THÔNG TIN</p></li>
+                                    <li><p href="">Chính sách bảo mật</p></li>
+                                    <li><p href="">Điều khoản sử dụng</p></li>
+                                    <li><p href="">Quy chế hoạt động</p></li>
+                                    <li><a href="/Banchay/HuongDan.html">Hướng dẫn mua hàng</a></li>
+                                </ul>
+                                    </div>
+                                        </div>
+        </footer>
+
+        <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/Main.js"></script>
+</body>
+</html>

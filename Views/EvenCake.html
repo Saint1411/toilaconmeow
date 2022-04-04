@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BirthDay Cake</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Views/Style.css">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav>
+            <div class=".container-fluid">
+                <div class="row">
+                    <div class="col-6 menu">
+                        <ul>
+                            <li><i class="fas fa-birthday-cake"></i></li>
+                            
+                            <li>
+                                <a href="/Views/Home.html"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-bars"></i> Danh mục</a>
+                                <ul class="menu-child">
+                                    <li><a href="/Views/BDCake.html">Bánh sinh nhật</a></li>
+                                    <li><a href="/Views/RequestCake.html">Bánh theo yêu cầu</a></li>
+                                    <li><a href="/Views/EvenCake.html">Bánh ngày lễ</a></li>
+                                    <li><a href="/Views/MiniCake.html">Mini Cake</a></li>
+                                    <li><a href="/Views/Login.html"><i class="fas fa-sign-in-alt"></i> Sign-in</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 ShoppingCart">
+                        <div class="topnav">
+                            <div class="search-container">
+                              <form action="/action_page.php">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
+                            </div>
+                          </div>
+                        <button id="cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            Giỏ Hàng
+                        </button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Giỏ Hàng</h5>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="cart-row">
+                                        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                        <span class="cart-price cart-header cart-column">Giá</span>
+                                        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                                    </div>
+                                    <div class="cart-items">
+                                        
+                                    <div class="cart-total">
+                                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                                        <span class="cart-total-price">0VNĐ</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                                    <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <input  type="checkbox" class="switch-toggle" id="light-dark">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 title">
+                <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>            </div>
+        </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/silde1.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/silde2.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/slide3.jpg" style="width:100%">
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        <div id="wrapper01">
+            <div class="headline">
+                <h3>trẻ trung và sành điệu</h3>
+            </div>
+            <ul class="products">
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Pictures/Home/a1.jpg" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;" src="https://banhthienthan.com/wp-content/uploads/2020/12/banh-kem-nhieu-tang-hinh-nhung-cuon-so-nhieu-mau-mung-ngay-nha-giao-viet-nam.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Pictures/Home/a2.jpg" class="product-name">CHOCOLATE - MẪU 2108</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Pictures/Home/a3.jpg" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;" src="https://banhthienthan.com/wp-content/uploads/2021/02/banh-kem-giang-sinh-ong-gia-noel-va-ngoi-nha-do-mua-dong-gia-lanh-500x565.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Pictures/Home/a4.jpg" class="product-name">CHANH DÂY - MẪU 2110</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Pictures/Home/a5.jpg" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;" src="https://banhthienthan.com/wp-content/uploads/2019/04/banh-fondant-haloween-hinh-trai-bi-quai-di-500x462.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 3.html" class="product-name">TIRAMISU - MẪU 2112</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 4.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;"  src="https://banhthienthan.com/wp-content/uploads/2018/12/banh-fondant-hinh-chu-tuan-loc-noel-dang-yeu.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 4.html" class="product-name">BÁNH KEM BẮP - MẪU 2124</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 5.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;" src="https://banhkemngonghinh.com/wp-content/uploads/2020/02/02-banh-kem-sinh-nhat-mung-le-valetine-trai-tim-bat-hoa-hong-do-dep-mat.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 5.html" class="product-name">MOUSSE DÂU - MẪU 2139</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 6.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;" src="https://s.meta.com.vn/img/thumb.ashx/Data/image/2021/08/19/banh-kem-mung-le-vu-lan-8.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 6.html" class="product-name">BÁNH KEM BẮP - MẪU 2118</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 7.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;"  src="https://banhthienthan.com/wp-content/uploads/2020/12/banh-kem-hinh-nhung-chu-gau-mung-giang-sinh-ben-nhung-hop-qua-hat-cuom-christmas-vui-nhon-500x435.jpg" alt="">                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a  href="/Detail_home/bánh 7.html" class="product-name">BÁNH KEM BẮP - MẪU 2125</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 8.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 248px;" src="https://banhthienthan.com/wp-content/uploads/2018/12/banh-kem-ngoi-nha-giang-sinh-nhieu-mau-sac-300x300.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 30$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 8.html" class="product-name">BÁNH KEM BẮP - MẪU 2114</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6" id="box">
+                        <ul>
+                            <li><p href="">CÔNG TY CỔ PHẦN CÔNG NGHỆ SÂU Á CHÂU</p></li>
+                            <li><p href="">Địa chỉ: 104 Mai Thị Lựu, phường Đa Kao, Quận 1, TP Hồ Chí Minh </p></li>
+                            <li><p href="">E-mail: hotro@deeptech.vn</p></li>
+                            <li><p href="">Giấy phép kinh doanh số: 0316966537</p></li>
+                            <li><p href="">Cấp ngày: 06/10/2021 bởi Sở kế hoạch và Đầu tư Tp. Hồ Chí Minh</p></li>
+                        </ul>
+                        </div>
+                        <div class="col-3" id="box1">
+                            <ul>
+                                <li><p href="">VỀ CHÚNG TÔI</p></li>
+                                <li><p href="">Giới thiệu</p></li>
+                                <li><p href="">Liên hệ</p></li>
+                                <li><p href="">Sơ đồ webstie</p></li>
+                            </ul>
+                            </div>
+                            <div class="col-3" id="box2">
+                                <ul>
+                                    <li><p href="">THÔNG TIN</p></li>
+                                    <li><p href="">Chính sách bảo mật</p></li>
+                                    <li><p href="">Điều khoản sử dụng</p></li>
+                                    <li><p href="">Quy chế hoạt động</p></li>
+                                    <li><a href="/Banchay/HuongDan.html">Hướng dẫn mua hàng</a></li>
+                                </ul>
+                                    </div>
+                                        </div>
+        </footer>
+        <script>
+            /*animation text--*/
+// function([string1, string2],target id,[color1,color2])    
+consoleText(['HAPPY BIRTHDAY...', 'AND MERRY CHRISTMAS...','MIST IS AWAY WISH YOU...','FROM THE MIST WITH LOVE.'], 'text',['tomato','rebeccapurple','lightblue']);
+
+function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id);
+  target.setAttribute('style', 'color:' + colors[0])
+  window.setInterval(function() {
+
+    if (letterCount === 0 && waiting === false) {
+      waiting = true;
+      target.innerHTML = words[0].substring(0, letterCount);
+      window.setTimeout(function() {
+        var usedColor = colors.shift();
+        colors.push(usedColor);
+        var usedWord = words.shift();
+        words.push(usedWord);
+        x = 1;
+        target.setAttribute('style', 'color:' + colors[0])
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (letterCount === words[0].length + 1 && waiting === false) {
+      waiting = true;
+      window.setTimeout(function() {
+        x = -1;
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (waiting === false) {
+      target.innerHTML = words[0].substring(0, letterCount)
+      letterCount += x;
+    }
+  }, 120)
+  window.setInterval(function() {
+    if (visible === true) {
+      con.className = 'console-underscore hidden'
+      visible = false;
+
+    } else {
+      con.className = 'console-underscore'
+
+      visible = true;
+    }
+  }, 400)
+}
+        </script>
+        <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/Main.js"></script>    
+</body>
+</html>

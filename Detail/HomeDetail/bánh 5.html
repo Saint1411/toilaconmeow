@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="Viewport" content="width=devie-width, initial-scale=1.0">
+            <title>Thông tin sản phẩm</title>
+</head>
+<body>
+    <style>
+        html{
+            background-image: linear-gradient(180deg, pink, white, pink);
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:ital,wght@1,100&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            color: #111;
+            line-height: 1.15;
+        }
+        #wrapper{
+            max-width: 1170px;
+            margin: 0 auto;
+        }
+        .headline{
+            text-align: center;
+            margin: 40px 0px;
+        }
+        h3{
+            font-size: 18px;
+            color: #111;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border: 1px solid #bebebe;
+            display: inline-block;
+            color: #555;
+            font-weight: 600;
+            font-size: 35px;
+        }
+        .col-sm-5{
+            text-align: right;
+        }
+        .col-sm-7{
+            position: relative;
+            bottom: 400px;
+        }
+        .col-sm-7 h1{
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .col-sm-7 ul, li{
+            list-style: none;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        button{
+            width: 80px;
+            height: 30px;
+            background-color: #c0392b;
+            color: white;
+        }
+        .note{
+            color: yellowgreen;
+            margin-top: 48px;
+            font-size: 17px;
+       }
+    </style>
+    <div id="wrapper">
+        <div class="headline">
+            <h3>Thông tin sản phẩm</h3>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <article class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img src="/Pictures/Home/a5.jpg" width="490px" height="450px" alt="">
+                    </div>
+                    <div class="col-sm-7" style="margin-top: 10px; font-size: 16px;">
+                        <ul style="line-height: 25px;">
+                            <li> <h2>MOUSSE DÂU - MẪU 2139</h2> </li>
+                            <li> 440.000 ₫</li>
+                            <li>Mousse dâu size bánh 20x6cm</li>
+                            <li>Lớp mousse phô mai mềm mịn kết hợp cùng nước ép dâu tươi trong 
+                                phần <br>kem mang đến sự trải nghiệm hoàn toàn mới cho chiếc bánh Mousse dâu</li>
+                            <li><button onclick="Clickbtn()">Buy now</button></li>
+                            <div class="note">
+                                <p>Vui lòng cho biết thông tin số tuổi & nội dung ghi trên bánh ở phần ghi chú khi đặt hàng.</p>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script>
+        function Clickbtn(){
+            alert("thêm vào giỏ hàng thành công!")
+        }
+    </script>
+</body>
+</html>

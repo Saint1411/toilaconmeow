@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Views/Style.css">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav>
+            <div class=".container-fluid">
+                <div class="row">
+                    <div class="col-6 menu">
+                        <ul>
+                            <li><i class="fas fa-birthday-cake"></i></li>
+                            
+                            <li>
+                                <a href="/Views/Home.html"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-bars"></i> Danh mục</a>
+                                <ul class="menu-child">
+                                    <li><a href="/Views/BDCake.html">Bánh sinh nhật</a></li>
+                                    <li><a href="/Views/RequestCake.html">Bánh theo yêu cầu</a></li>
+                                    <li><a href="/Views/EvenCake.html">Bánh ngày lễ</a></li>
+                                    <li><a href="/Views/MiniCake.html">Mini Cake</a></li>
+                                    <li><a href="/Views/Login.html"><i class="fas fa-sign-in-alt"></i> Sign-in</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 ShoppingCart">
+                        <div class="topnav">
+                            <div class="search-container">
+                              <form action="/action_page.php">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
+                            </div>
+                          </div>
+                        <button id="cart">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            Giỏ Hàng
+                        </button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Giỏ Hàng</h5>
+                                    <span class="close">&times;</span>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="cart-row">
+                                        <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                        <span class="cart-price cart-header cart-column">Giá</span>
+                                        <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                                    </div>
+                                    <div class="cart-items">
+                                        
+                                    <div class="cart-total">
+                                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                                        <span class="cart-total-price">0$</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                                    <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <input  type="checkbox" class="switch-toggle" id="light-dark">
+    </div>
+    <div class="center-outer">
+        <div class="center-inner">
+        
+        <div class="bubbles">
+        <h1>Welcome to the Mist</h1>
+        </div>
+        
+        </div>
+        </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/silde1.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/silde2.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="/Pictures/Slide/slide3.jpg" style="width:100%">
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        <!-- ----------- -->
+        <div class="container">
+            <div row>
+                <div class="col-12">
+                    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <div class="content_chay">
+            <div class="content__container">
+              <p class="content__container__text">
+                Chúng tôi có
+              </p>
+              
+              <ul class="content__container__list">
+                <li class="content__container__list__item"> bánh sinh nhật</li>
+                <li class="content__container__list__item"> bánh ngày lễ</li>
+                <li class="content__container__list__item">bánh đặt yêu cầu</li>
+                <li class="content__container__list__item"> mini cake</li>
+              </ul>
+            </div>
+          </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="wrapper01">
+            <div class="headline">
+                <h3>sản phẩm bán chạy</h3>
+            </div>
+            <ul class="products">
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Pictures/Home/a1.jpg" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/18-51_bd9ed00a38804216af8bc30acf65d727_large.jpg"  alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 21$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Pictures/Home/a2.jpg" class="product-name">BÁNH PHÔ MAI BƠ TỎI</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Pictures/Home/a3.jpg" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/dua_f84690be3aa2431eb3da9f1882b0404f_large.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 22$
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Pictures/Home/a4.jpg" class="product-name">BÁNH CHANH DÂY </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Pictures/Home/a5.jpg" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/img_5165_d2ebd3b842bf47479b33a8039df65222_large.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 7$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 3.html" class="product-name">PETIT HOA QUẢ</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 4.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/18-17_a4e9599f23fb43789f6edd5fb4ce8415_large.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 12$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 4.html" class="product-name">BÔNG LAN TRỨNG MUỐI</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 5.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/18-1__1__231c5f77e996425d9ae6466ec788765c_large.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 31$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 5.html" class="product-name">BÔNG LAN NHO</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 6.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/18-62_ba1a2609221d4f0a816718d2631c8d37_large.jpg"  alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 10$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 6.html" class="product-name">BÔNG LAN CUỐN</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 7.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/18-73_7b0812b526b245429336f4254be47ce1_large.jpg" alt="">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 3$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a  href="/Detail_home/bánh 7.html" class="product-name">BUFFER CAKE</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="product-ite">
+                        <div class="product-top">
+                            <a href="/Detail_home/bánh 8.html" class="product-thumb">
+                                <img class="img_banchay" style="height: 245px; width: 400px;" src="https://product.hstatic.net/1000313040/product/18-75_bc3a143423714a3a827c7aa6e3802b0d_large.jpg">
+                            </a>
+                            <button class="buy-now">
+                                <i class="fas fa-cart-plus"></i>
+                                 9$
+                            </button>                        </div>
+                        <div class="product-info">
+                            <span>DELIVERY</span>
+                            <a href="/Detail_home/bánh 8.html" class="product-name">BUFFER CHOCOLATE</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6" id="box">
+                        <ul>
+                            <li><p href="">CÔNG TY CỔ PHẦN CÔNG NGHỆ SÂU Á CHÂU</p></li>
+                            <li><p href="">Địa chỉ: 104 Mai Thị Lựu, phường Đa Kao, Quận 1, TP Hồ Chí Minh </p></li>
+                            <li><p href="">E-mail: hotro@deeptech.vn</p></li>
+                            <li><p href="">Giấy phép kinh doanh số: 0316966537</p></li>
+                            <li><p href="">Cấp ngày: 06/10/2021 bởi Sở kế hoạch và Đầu tư Tp. Hồ Chí Minh</p></li>
+                        </ul>
+                        </div>
+                        <div class="col-3" id="box1">
+                            <ul>
+                                <li><p href="">VỀ CHÚNG TÔI</p></li>
+                                <li><p href="">Giới thiệu</p></li>
+                                <li><p href="">Liên hệ</p></li>
+                                <li><p href="">Sơ đồ webstie</p></li>
+                            </ul>
+                            </div>
+                            <div class="col-3" id="box2">
+                                <ul>
+                                    <li><p href="">THÔNG TIN</p></li>
+                                    <li><p href="">Chính sách bảo mật</p></li>
+                                    <li><p href="">Điều khoản sử dụng</p></li>
+                                    <li><p href="">Quy chế hoạt động</p></li>
+                                    <li><a href="/Banchay/HuongDan.html">Hướng dẫn mua hàng</a></li>
+                                </ul>
+                                    </div>
+                                        </div>
+        </footer>
+
+        <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/Main.js"></script>
+</body>
+</html>
